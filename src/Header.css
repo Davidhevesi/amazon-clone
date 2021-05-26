@@ -1,0 +1,6 @@
+.header {
+  @apply h-16 flex items-center bg-gray-800 sticky z-50;
+}
+.header_logo {
+  @apply w-24 object-contain mt-0 mb-5 m-5;
+}
