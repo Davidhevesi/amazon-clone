@@ -1,20 +1,26 @@
 import React from "react";
 
-function Product() {
+function Product({ id, title, image, price, rating }) {
   return (
-    <div className="product">
-      <div className="product_info">
-        <p>The Lean Start upp</p>
-        <p className="product_price">
+    <div className="flex flex-col items-center justify-self-end m-3 p-3 w-full max-h-96 min-w-full bg-white z-10">
+      <div className="h-full mb-4">
+        <p>{title}</p>
+        <p className="mt-1">
           <small>$</small>
-          <strong>19.99</strong>
+          <strong>{price}</strong>
         </p>
-        <div className="product_rating">
-          <p>⭐️</p>
+        <div className="flex">
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <p>⭐️</p>
+            ))}
         </div>
       </div>
-      <img src="https://m.media-amazon.com/images/I/51PAIR77wJL._AC_SL520_.jpg" />
-      <button>Add to basket</button>
+      <img class="max-h-32 object-contain w-full mb-4" src={image} />
+      <button class="bg-yellow-400 px-2 border-solid border-2 text-black border-yellow-400">
+        Add to basket
+      </button>
     </div>
   );
 }
