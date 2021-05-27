@@ -9,7 +9,7 @@ function Header() {
     <div className="h-16 flex items-center bg-gray-800 sticky z-50">
       <Link to="/">
         <img
-          className="w-24 object-contain mt-0 mb-5 m-5"
+          className="w-24 object-contain mt-8 mb-5 m-5"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
         />
       </Link>
