@@ -1,15 +1,27 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "./firebase";
 const Login = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
 
-  const signIn = (e) => {
+  const signIn = e => {
     e.preventDeafault();
   };
-  const register = (e) => {
-    e.preventDeafault();
+
+  const register = e => {
+    // e.preventDeafault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="flex flex-col items-center h-screen bg-white">
@@ -20,7 +32,7 @@ const Login = () => {
         />
       </Link>
       <div className="md:w-2/4 lg:w-1/4 object-fit flex flex-col border-4 border-solid border-gray-200 p-5">
-        <h1 class="font-medium mb-5 text-2xl">Sign-In</h1>
+        <h1 className="font-medium mb-5 text-2xl">Sign-In</h1>
         <form>
           <div>
             <label

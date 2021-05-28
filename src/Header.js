@@ -22,20 +22,20 @@ function Header() {
       <div className="flex justify-evenly">
         <Link to="/login">
           <div className="flex flex-col ml-3 text-white">
-            <span class="text-small">Hello Guests</span>
-            <span class="text-base font-medium">Sign In</span>
+            <span className="text-small">Hello Guests</span>
+            <span className="text-base font-medium">Sign In</span>
           </div>
         </Link>
         <div className="flex flex-col ml-3 text-white">
-          <span class="text-small">Returns</span>
-          <span class="text-base font-medium">& Orders</span>
+          <span className="text-small">Returns</span>
+          <span className="text-base font-medium">& Orders</span>
         </div>
         <div className="flex flex-col ml-3 text-white">
-          <span class="text-small">Your</span>
-          <span class="text-base font-medium">Prime</span>
+          <span className="text-small">Your</span>
+          <span className="text-base font-medium">Prime</span>
         </div>
         <Link to="/checkout">
-          <div class="flex items-center text-white pt-2 ml-2">
+          <div className="flex items-center text-white pt-2 ml-2">
             <ShoppingBasketIcon />
             <span className="header_optionLineTwo header_basketCount">
               {basket?.length}
