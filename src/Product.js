@@ -35,7 +35,7 @@ function Product({ id, title, image, price, rating }) {
       <img class="max-h-32 object-contain w-full mb-4" src={image} />
       <button
         onClick={addToBasket}
-        class="bg-yellow-400 px-2 border-solid border-2 text-black border-yellow-400"
+        className="bg-yellow-400 px-2 border-solid border-2 text-black border-yellow-400"
       >
         Add to basket
       </button>
