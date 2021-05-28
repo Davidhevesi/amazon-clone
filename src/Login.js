@@ -8,6 +8,9 @@ const Login = () => {
   const signIn = (e) => {
     e.preventDeafault();
   };
+  const register = (e) => {
+    e.preventDeafault();
+  };
   return (
     <div className="flex flex-col items-center h-screen bg-white">
       <Link to="/">
@@ -72,7 +75,10 @@ const Login = () => {
           Sale. Please see our Privacy Notice, our Cookies Notice and our
           Interest-Based Ads Notice.
         </p>
-        <button className="border-2 w-full h-8 border-solid mt-2 border-gray-200 bg-gray-100">
+        <button
+          onClick={register}
+          className="border-2 w-full h-8 border-solid mt-2 border-gray-200 bg-gray-100"
+        >
           Create your amazon account
         </button>
       </div>
