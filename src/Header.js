@@ -33,7 +33,7 @@ function Header() {
           <span class="text-base font-medium">Prime</span>
         </div>
         <Link to="/checkout">
-          <div class="flex items-center text-white">
+          <div class="flex items-center text-white pt-2 ml-2">
             <ShoppingBasketIcon />
             <span className="header_optionLineTwo header_basketCount">
               {basket?.length}
