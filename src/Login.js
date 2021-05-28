@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPasssword] = useState("");
+
+  const signIn = (e) => {
+    e.preventDeafault();
+  };
   return (
     <div className="flex flex-col items-center h-screen bg-white">
       <Link to="/">
@@ -22,6 +28,8 @@ const Login = () => {
             </label>
             <div className="mt-1">
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 name="email"
                 type="email"
@@ -40,6 +48,8 @@ const Login = () => {
             </label>
             <div className="mt-1">
               <input
+                onChange={(e) => setPasssword(e.target.value)}
+                value={password}
                 id="password"
                 name="password"
                 type="password"
@@ -49,7 +59,11 @@ const Login = () => {
               />
             </div>
           </div>
-          <button className="bg-yellow-400 border-2 w-full h-8 border-solid  mt-2 border-yellow-100">
+          <button
+            type="submit"
+            onClick={signIn}
+            className="bg-yellow-400 border-2 w-full h-8 border-solid  mt-2 border-yellow-100"
+          >
             Sign In
           </button>
         </form>
