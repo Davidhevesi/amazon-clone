@@ -20,10 +20,12 @@ function Header() {
         <SearchIcon className="p-1 h-5 bg-yellow-400" />
       </div>
       <div className="flex justify-evenly">
-        <div className="flex flex-col ml-3 text-white">
-          <span class="text-small">Hello Guests</span>
-          <span class="text-base font-medium">Sign In</span>
-        </div>
+        <Link to="/login">
+          <div className="flex flex-col ml-3 text-white">
+            <span class="text-small">Hello Guests</span>
+            <span class="text-base font-medium">Sign In</span>
+          </div>
+        </Link>
         <div className="flex flex-col ml-3 text-white">
           <span class="text-small">Returns</span>
           <span class="text-base font-medium">& Orders</span>
