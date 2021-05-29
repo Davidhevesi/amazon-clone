@@ -7,9 +7,15 @@ const Login = () => {
   const [password, setPasssword] = useState("");
 
   const signIn = e => {
-    e.preventDeafault();
-  };
+    e.preventDefault();
 
+    auth
+        .signInWithEmailAndPassword(email, password)
+        .then(auth => {
+            history.push('/')
+        })
+        .catch(error => alert(error.message))
+}
   const register = e => {
     // e.preventDeafault();
 
@@ -17,6 +23,7 @@ const Login = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth);
+        //If successfull create new user with emial & password
         if (auth) {
           history.push("/");
         }
