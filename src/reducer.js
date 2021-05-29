@@ -1,5 +1,6 @@
 export const initialState = {
   basket: [],
+  user: null
 };
 
 // Selector
@@ -19,6 +20,7 @@ const reducer = (state, action) => {
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.id
       );
+     
       //copy the basket with the new state into a temporary variable
       let newBasket = [...state.basket];
       //Checks for any items in the basket and remove it by 1
@@ -34,6 +36,12 @@ const reducer = (state, action) => {
         ...state,
         basket: newBasket,
       };
+      case "SET_USER":
+        //Find the first match and returns it back
+        return {
+          ...state,
+          user: action.user 
+        }
     default:
       return state;
   }
