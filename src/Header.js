@@ -28,7 +28,7 @@ function Header() {
       <div className="flex justify-evenly">
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="flex flex-col ml-3 text-white">
-            <span className="text-small">Hello Guests</span>
+            <span className="text-small">{user ? user.email.replace(/@[^@]+$/, '') : 'Hello Guest'}</span>
             <span className="text-base font-medium">{ user ? 'Sign Out' : 'Sign in'}</span>
           </div>
         </Link>
