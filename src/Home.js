@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product";
+import Product from "./components/product/Product";
 function Home() {
   return (
     <div className="flex justify-center ml-auto mr-auto max-w-7xl">
