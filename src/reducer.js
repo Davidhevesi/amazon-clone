@@ -10,6 +10,12 @@ export const getBasketTotal = (basket) =>
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    //Empty out the basket.
+    case "EMPTY_BASKET":
+    return {
+      ...state,
+      basket: []
+    }
     case "ADD_TO_BASKET":
       return {
         ...state,
