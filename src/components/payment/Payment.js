@@ -7,6 +7,7 @@ import axios from "../../axios";
 import { db } from "../../firebase";
 import CheckoutProduct from "../checkout/CheckoutProduct";
 import { useStateValue } from "../../StateProvider";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Payment = () => {
   const history = useHistory();
@@ -91,9 +92,9 @@ const Payment = () => {
           </div>
         </div>
         {/* Payment section Review items */}
-        <div className="flex p-5 m-5 border-b-2 border-gray-700 border-solid">
+        <div className="flex p-5 border-b-2 border-gray-300 m-5 border-solid">
           <div className="">
-            <h3 class="font-bold text-lg">Review items in the order:</h3>
+            <h3 class="font-bold text-lg">Review items :</h3>
           </div>
 
           <div>
@@ -109,15 +110,17 @@ const Payment = () => {
             ))}
           </div>
         </div>
-        {/* Payment section- Payment method */}
-        <div className="">
+        {/* Payment Info  */}
+        <div className="flex  p-5 m-5">
           <div className="">
             <h3 class="font-bold text-lg">Payment Method:</h3>
           </div>
-          <div>
-            <form className="max-w-screen-small" onSubmit={handleSubmit}>
-              <CardElement onchange={handleChange} />
-              <div className="payment_price_container">
+          <div class="w-1/2">
+            <form className="ml-2" onSubmit={handleSubmit}>
+              <div className="focus:border-orange-400 bg-white border appearance-none border-gray-400 rounded my-0 mx-auto w-full py-2 px-3 text-gray-700 leading-tight">
+                <CardElement  options={{ style: { base: { fontSize: '16px', color: '#424770', '::placeholder': { color: '#aab7c4', }, }, }, }} onchange={handleChange} />
+              </div>
+              <div className="mt-2 mb-2">
                 <CurrencyFormat
                   renderText={(value) => (
                     <>
@@ -141,7 +144,13 @@ const Payment = () => {
                   className="bg-yellow-400 border-md w-1/3 h-8 border-solid border-2 font-bold mt-2 border-yellow-500 text-black"
                   disabled={processing || disabled || succeeded}
                 >
-                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                  <span>
+                    {processing ? (
+                      <CircularProgress style={{ fontSize: 1 }} />
+                    ) : (
+                      "Buy Now"
+                    )}
+                  </span>
                 </button>
               </div>
               {error && <div>{error}</div>}
