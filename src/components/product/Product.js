@@ -2,7 +2,7 @@ import React from "react";
 import { useStateValue } from "../../StateProvider";
 
 function Product({ id, title, image, price, rating }) {
-  const [ dispatch] = useStateValue();
+  const [ {}, dispatch] = useStateValue();
 
   const addToBasket = () => {
     dispatch({
@@ -17,7 +17,7 @@ function Product({ id, title, image, price, rating }) {
     });
   };
   return (
-    <div className="flex flex-col items-center justify-self-end m-3 p-3 w-full max-h-96 min-w-full bg-white z-10">
+    <div className="flex flex-col items-center justify-self-end mb-4 md:m-3 p-3 w-full max-h-96 min-w-full bg-white z-10 rounded-lg">
       <div className="h-full mb-4">
         <p>{title}</p>
         <p className="mt-1">
