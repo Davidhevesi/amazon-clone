@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./Login";
+import Login from "./components/login/Login";
 import React, { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
@@ -15,7 +15,7 @@ import Header from "./components/header/Header";
 const promise = loadStripe("pk_test_DYDXWo0UukDGyXisg6XzBZ1p00H4z0ZkEL");
 
 function App() {
-  const [dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   useEffect(() => {
     // will only run once when the app component loads...
 

@@ -6,18 +6,18 @@ function Home() {
       <div className="home__container">
         <div>
           <img
-            className="w-full -mb-36"
+            className="w-full md:-mb-36"
             src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
             alt=""
           />
 
-          <div className="grid grid-cols-2 gap-2 z-10 ml-6">
+          <div className="grid grid-rows-1 md:grid md:grid-cols-2 md:gap-2 md:z-10 md:ml-6 rounded-lg">
             <Product
               id="12321341"
               title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
               price={11.96}
               rating={5}
-              image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+              image="https://m.media-amazon.com/images/I/81DFTWgsFtL._AC_UY218_.jpg"
             />
             <Product
               id="49538094"
@@ -27,7 +27,7 @@ function Home() {
               image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
             />
           </div>
-          <div className="grid grid-cols-3 gap-2 z-10 ml-6">
+          <div className="grid grid-rows-1 md:grid md:grid-cols-3 md:gap-2 md:z-10 md:ml-6">
             <Product
               id="4903850"
               title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
@@ -50,7 +50,7 @@ function Home() {
               image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
             />
           </div>
-          <div className="grid grid-cols-1 gap-2 z-10 ml-6">
+          <div className="grid grid-rows-1 md:grid md:grid-cols-1 md:gap-2 z-10 md:ml-6">
             <Product
               id="90829332"
               title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
